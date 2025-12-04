@@ -12,10 +12,7 @@ export type Incident = {
 }
 
 export async function fetchIncidents(): Promise<Incident[]> {
-  console.log('API_URL =', API_URL) 
   const res = await fetch(`${API_URL}/incidents`)
-
-  console.log('response status =', res.status) 
 
   if (!res.ok) {
     throw new Error(`Failed to fetch incidents, status ${res.status}`)
